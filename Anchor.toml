@@ -1,7 +1,12 @@
 [features]
 seeds = true
+
 [programs.localnet]
 solana_wallet = "HtzrgxvmkSi3YL6mZ5Csv79TYxW8mqZ5h7k7MZF6fG1v"
+
+[programs.devnet]
+solana_wallet = "HtzrgxvmkSi3YL6mZ5Csv79TYxW8mqZ5h7k7MZF6fG1v"
+
 
 [registry]
 url = "https://anchor.projectserum.com"
