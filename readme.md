@@ -6,6 +6,7 @@
 - (Solana) [solan-cli](https://docs.solana.com/cli/install-solana-cli-tools) 1.9.13
 - (Anchor) [anchor](https://book.anchor-lang.com/chapter_2/installation.html) 0.24.2
 - (Node) [node](https://github.com/nvm-sh/nvm) 17.4.0
+- [AnchorPy](https://kevinheavey.github.io/anchorpy/)
 
 ### Setup
 
@@ -39,3 +40,9 @@ anchor migrate --provider.cluster devnet
 env ANCHOR_WALLET=~/.config/solana/id.json ./node_modules/.bin/ts-node .anchor/deploy.ts
 ```
 
+## Python client & tests
+
+```sh
+# Generate anchorpy client
+anchorpy client-gen target/idl/solana_wallet.json client
+```

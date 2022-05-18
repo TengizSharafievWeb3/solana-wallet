@@ -5,3 +5,5 @@ target
 **/*.rs.bk
 node_modules
 test-ledger
+.pytest_cache
+__pycache__
