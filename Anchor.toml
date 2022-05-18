@@ -1,7 +1,7 @@
 [features]
 seeds = true
 [programs.localnet]
-solana_wallet = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+solana_wallet = "HtzrgxvmkSi3YL6mZ5Csv79TYxW8mqZ5h7k7MZF6fG1v"
 
 [registry]
 url = "https://anchor.projectserum.com"
