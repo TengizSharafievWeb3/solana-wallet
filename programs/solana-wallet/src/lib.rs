@@ -30,7 +30,7 @@ pub mod solana_wallet {
         require!(amount > 0, WalletError::AmountMustBeMoreZero);
 
         let cpi_account = Transfer {
-            from: ctx.accounts.from.to_account_info(),
+            from: ctx.accounts.source.to_account_info(),
             to: ctx.accounts.vault.to_account_info(),
             authority: ctx.accounts.authority.to_account_info(),
         };
@@ -138,7 +138,7 @@ pub struct Deposit<'info> {
     pub authority: Signer<'info>,
 
     #[account(mut)]
-    pub from: Account<'info, TokenAccount>,
+    pub source: Account<'info, TokenAccount>,
 
     #[account(
         mut,

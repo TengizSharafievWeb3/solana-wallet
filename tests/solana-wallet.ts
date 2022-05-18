@@ -156,7 +156,7 @@ describe("solana-wallet", () => {
       .accounts({
         wallet: wallet.publicKey,
         authority: provider.wallet.publicKey,
-        from: token1.publicKey,
+        source: token1.publicKey,
       }).rpc();
 
     const balanceAfter = await tokenBalance(tokenProgram, token1.publicKey);
@@ -207,7 +207,7 @@ describe("solana-wallet", () => {
       .accounts({
         wallet: wallet.publicKey,
         authority: provider.wallet.publicKey,
-        from: token2.publicKey,
+        source: token2.publicKey,
       }).rpc()
     ).to.be.rejected;
   });
@@ -218,7 +218,7 @@ describe("solana-wallet", () => {
         .accounts({
           wallet: wallet.publicKey,
           authority: provider.wallet.publicKey,
-          from: token1.publicKey,
+          source: token1.publicKey,
         }).rpc()
     ).to.be.rejectedWith(/AmountMustBeMoreZero/);
   });
@@ -229,7 +229,7 @@ describe("solana-wallet", () => {
       .accounts({
         wallet: wallet.publicKey,
         authority: authority.publicKey,
-        from: token1.publicKey,
+        source: token1.publicKey,
       }).signers([authority]).rpc()
     ).to.be.rejected;
   });
@@ -280,7 +280,7 @@ describe("solana-wallet", () => {
       .accounts({
         wallet: wallet.publicKey,
         authority: provider.wallet.publicKey,
-        from: token1.publicKey,
+        source: token1.publicKey,
       }).rpc();
 
     await expect(
