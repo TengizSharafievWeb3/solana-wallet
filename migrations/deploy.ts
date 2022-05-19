@@ -5,6 +5,7 @@
 import {Keypair, PublicKey} from "@solana/web3.js";
 import { SolanaWallet } from "../target/types/solana_wallet";
 import { Program } from "@project-serum/anchor";
+import fs from "fs";
 
 
 const anchor = require("@project-serum/anchor");
@@ -15,12 +16,14 @@ module.exports = async function (provider) {
   const program = anchor.workspace.SolanaWallet as Program<SolanaWallet>;
 
   // devnet/authority.json
-  const authority = new PublicKey("9BxSrya1LfE16h3yvcxZopAYGCyYL82TRLnNde5BDnfX");
+  const authority = new PublicKey("Dt9ScUV21VcwLe4j8hWkE3pM2v3SaV8X57Gngbvps7vA");
 
   // devnet/mint.json
   const mint = new PublicKey("4wtFxtvYUDPbz94xT1ose56YZoYia8xG3REbWhmYkzgN")
 
-  const wallet = Keypair.generate();
+  const rawdata = fs.readFileSync('devnet/wallet.json');
+  const keyData = JSON.parse(rawdata.toString());
+  const wallet = Keypair.fromSecretKey(new Uint8Array(keyData));
 
   const keys = await program.methods.initialize()
     .accounts({
